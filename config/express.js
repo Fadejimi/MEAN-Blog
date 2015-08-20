@@ -52,5 +52,7 @@ module.exports = function() {
     require('../app/routes/article.server.routes.js')(app);
 
     app.use(express.static('./public'));
+
+    require('./socketio')(server, io, mongoStore);
     return server;
 };
